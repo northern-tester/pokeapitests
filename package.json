@@ -1,0 +1,29 @@
+{
+  "name": "pokeapitests",
+  "version": "1.0.0",
+  "description": "Chakram tests to show off my API test automation skills",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/northern-tester/pokeapitests.git"
+  },
+  "keywords": [
+    "Pokemon",
+    "API",
+    "tests",
+    "Chakram"
+  ],
+  "author": "Ash Winter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/northern-tester/pokeapitests/issues"
+  },
+  "homepage": "https://github.com/northern-tester/pokeapitests#readme",
+  "devDependencies": {
+    "chakram": "^1.5.0",
+    "mocha": "^3.4.2"
+  }
+}
