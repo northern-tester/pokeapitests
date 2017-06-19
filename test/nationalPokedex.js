@@ -9,9 +9,9 @@ assert.ok(fs.existsSync(configFilePath), 'Config file not found at path: '+ conf
 var config = require('nconf').env().argv().file({file: configFilePath});
 var urlConfig = config.get("url")
 var host = urlConfig.host;
-var uri = urlConfig.uri.pokedex;
+var uri = urlConfig.uri.nationalPokedex;
 
-describe("Retrieve Pokedex Entries", function () {
+describe("Retrieve National Pokedex Entries", function () {
 
     var pokedexData;
 
@@ -21,7 +21,7 @@ describe("Retrieve Pokedex Entries", function () {
     });
 
     //Assert against response code
-    it("should return 200 on success", function(){
+    it("National Pokedex Returns 200 Response Code", function(){
         return expect(pokedexData).to.have.status(200);
     });
 
@@ -153,5 +153,4 @@ describe("Retrieve Pokedex Entries", function () {
             expect(pokemonArray).to.have.length(721);
         });
     });
-
 });

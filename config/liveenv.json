@@ -3,7 +3,8 @@
         "host":"http://pokeapi.co/api/v2/",
         "uri":  {
                     "nationalPokedex":"pokedex/1/",
-                    "regionalPokedexes":"pokedex"
+                    "regionalPokedex":"pokedex/",
+                    "invalidPokedex":"pokedex/10/"
                }
     }
    
