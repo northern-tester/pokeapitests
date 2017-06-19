@@ -2,7 +2,8 @@
     "url":{
         "host":"http://pokeapi.co/api/v2/",
         "uri":  {
-                    "pokedex":"pokedex/1/"
+                    "nationalPokedex":"pokedex/1/",
+                    "regionalPokedexes":"pokedex"
                }
     }
    

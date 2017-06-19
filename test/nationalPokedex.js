@@ -25,10 +25,12 @@ describe("Retrieve Pokedex Entries", function () {
         return expect(pokedexData).to.have.status(200);
     });
 
+    //Assert that the content-type header is set to application/json
     it("should return header indicating content type of json", function() {
         return expect(pokedexData).to.have.header("content-type", "application/json");
     });
 
+    //Assert that the schema from the response matches the PokeAPI oracle
     it("should respond with data matching the Pokedex schema", function () {
         var expectedSchema = {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -146,5 +148,10 @@ describe("Retrieve Pokedex Entries", function () {
             return expect(pokedexData).to.have.schema(expectedSchema);
     });
 
+    it("Should return 721 pokemon entries for all Pokemon in all regions", function(){
+        return expect(pokedexData).to.have.json('pokemon_entries', function(pokemonArray){
+            expect(pokemonArray).to.have.length(721);
+        });
+    });
 
 });
