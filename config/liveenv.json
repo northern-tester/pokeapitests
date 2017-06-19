@@ -1,0 +1,9 @@
+{
+    "url":{
+        "host":"http://pokeapi.co/api/v2/",
+        "uri":  {
+                    "pokedex":"pokedex/1/"
+               }
+    }
+   
+}
