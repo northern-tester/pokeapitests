@@ -15,13 +15,13 @@ describe("Retrieve Regional pokedexes", function(){
 
     var pokedexData;
 
-    before("Get Data", function(){
+    before("Get Data", function(){ 
         //Get Pokedex Data
         pokedexData = chakram.get(host+uri);
     });
 
     //Assert against response code
-    it("Regional Pokedex List Returns 200 Response Code", function(){
+    it("Regional Pokedex List Returns 200 Response Code", function() {
         return expect(pokedexData).to.have.status(200);
     });
 
@@ -31,7 +31,7 @@ describe("Retrieve Regional pokedexes", function(){
     });
 
     //Assert against number of regional pokedexes
-    it("Regional Pokedex List Returns 14 Pokedexes", function(){
+    it("Regional Pokedex List Returns 14 Pokedexes", function() {
         return expect(pokedexData).to.have.json('results', function(pokemonArray){
             expect(pokemonArray).to.have.length(14);
         });
@@ -81,12 +81,38 @@ describe("Retrieve Regional pokedexes", function(){
     });
 
     //Assert against a region which doesn't exist
-    it("If Regional Pokedex Number Doesnt Exist Error Returned", function(){
+    it("If Regional Pokedex Number Doesnt Exist Error Returned", function() {
         var uri = urlConfig.invalidPokedex;
         var regionalPokedexError = chakram.get(host+uri);
         return expect(regionalPokedexError).to.have.status(404);
     });
 
-});
+    // it("Get All Regional Pokedexes and Check Their Contents", function(){
+    //         expect(pokedexData).to.have.json('results', function(regionalURLArray){
+    //             regionalURLArray.forEach(function(element) {
+    //                 var regionalPokedexURL = element.url;
+    //                 return regionalPokedexURL;
+    //         }).then(function(regionalPokedexURL) {
+    //                 var regionalPokedex = chakram.get(regionalPokedexURL);
+    //                 return regionalPokedex;
+    //         }).then(function(regionalPokedex){
+    //                 expect(regionalPokedex).to.have.json('name', element.name);
+    //                 return chakram.wait();
+    //       });
+    //    });
+    // });
 
-//Get all the regions and loop over them
+    it("Check All Regional Pokedexes from the National Pokedex List", function() {   
+        return chakram.get(host+uri)
+            .then(function(pokedexResponse){
+                return expect(pokedexResponse).to.have.json('results', function(regionalURLArray){
+                    regionalURLArray.forEach(function(element){
+                        return chakram.get(element.url)
+                            .then(function(regionalResponse){
+                                return expect(regionalResponse).to.have.status(200);
+                    })
+                })
+            })
+        })
+    });
+});
