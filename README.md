@@ -1,5 +1,7 @@
+![alt text](https://cdn.pixabay.com/photo/2016/09/14/17/32/pokemon-1669884_1280.jpg Eevee!)
+
 # pokeapitests
-For my love of Pokemon and art of API automation, a set of Chakram tests
+- For my love of Pokemon and art of API automation, a set of Chakram tests
 
 #To install
 - Clone this repo
@@ -7,5 +9,5 @@ For my love of Pokemon and art of API automation, a set of Chakram tests
 - Welcome to the world of tomorrow!
 
 #To run the tests
-`./node_modules/mocha/bin/_mocha test/pokedex.js --config config/liveenv.json`
+- `./node_modules/mocha/bin/_mocha test/ --config config/liveenv.json`
 
