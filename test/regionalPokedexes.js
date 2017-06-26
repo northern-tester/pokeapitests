@@ -39,44 +39,7 @@ describe("Retrieve Regional pokedexes", function(){
 
     //Assert against schema
     it("Regional Pokedex List Conforms to Schema", function(){
-        var expectedSchema = {
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "definitions": {},
-                "id": "http://example.com/example.json",
-                "properties": {
-                    "count": {
-                        "id": "/properties/count",
-                        "type": "integer"
-                    },
-                    "next": {
-                        "id": "/properties/next",
-                        "type": "null"
-                    },
-                    "previous": {
-                        "id": "/properties/previous",
-                        "type": "null"
-                    },
-                    "results": {
-                        "id": "/properties/results",
-                        "items": {
-                            "id": "/properties/results/items",
-                            "properties": {
-                                "name": {
-                                    "id": "/properties/results/items/properties/name",
-                                    "type": "string"
-                                },
-                                "url": {
-                                    "id": "/properties/results/items/properties/url",
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        "type": "array"
-                    }
-                },
-                "type": "object"
-            };
+        var expectedSchema = require('./../schemas/regionalPokedex');
             return expect(pokedexData).to.have.schema(expectedSchema);
     });
 
@@ -86,21 +49,6 @@ describe("Retrieve Regional pokedexes", function(){
         var regionalPokedexError = chakram.get(host+uri);
         return expect(regionalPokedexError).to.have.status(404);
     });
-
-    // it("Get All Regional Pokedexes and Check Their Contents", function(){
-    //         expect(pokedexData).to.have.json('results', function(regionalURLArray){
-    //             regionalURLArray.forEach(function(element) {
-    //                 var regionalPokedexURL = element.url;
-    //                 return regionalPokedexURL;
-    //         }).then(function(regionalPokedexURL) {
-    //                 var regionalPokedex = chakram.get(regionalPokedexURL);
-    //                 return regionalPokedex;
-    //         }).then(function(regionalPokedex){
-    //                 expect(regionalPokedex).to.have.json('name', element.name);
-    //                 return chakram.wait();
-    //       });
-    //    });
-    // });
 
     it("Check All Regional Pokedexes from the National Pokedex List", function() {   
         return chakram.get(host+uri)

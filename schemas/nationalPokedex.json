@@ -1,0 +1,113 @@
+{
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "definitions": {},
+                "id": "http://example.com/example.json",
+                "properties": {
+                    "descriptions": {
+                        "id": "/properties/descriptions",
+                        "items": {
+                            "id": "/properties/descriptions/items",
+                            "properties": {
+                                "description": {
+                                    "id": "/properties/descriptions/items/properties/description",
+                                    "type": "string"
+                                },
+                                "language": {
+                                    "id": "/properties/descriptions/items/properties/language",
+                                    "properties": {
+                                        "name": {
+                                            "id": "/properties/descriptions/items/properties/language/properties/name",
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "id": "/properties/descriptions/items/properties/language/properties/url",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "id": "/properties/id",
+                        "type": "integer"
+                    },
+                    "is_main_series": {
+                        "id": "/properties/is_main_series",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "id": "/properties/name",
+                        "type": "string"
+                    },
+                    "names": {
+                        "id": "/properties/names",
+                        "items": {
+                            "id": "/properties/names/items",
+                            "properties": {
+                                "language": {
+                                    "id": "/properties/names/items/properties/language",
+                                    "properties": {
+                                        "name": {
+                                            "id": "/properties/names/items/properties/language/properties/name",
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "id": "/properties/names/items/properties/language/properties/url",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "name": {
+                                    "id": "/properties/names/items/properties/name",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "pokemon_entries": {
+                        "id": "/properties/pokemon_entries",
+                        "items": {
+                            "id": "/properties/pokemon_entries/items",
+                            "properties": {
+                                "entry_number": {
+                                    "id": "/properties/pokemon_entries/items/properties/entry_number",
+                                    "type": "integer"
+                                },
+                                "pokemon_species": {
+                                    "id": "/properties/pokemon_entries/items/properties/pokemon_species",
+                                    "properties": {
+                                        "name": {
+                                            "id": "/properties/pokemon_entries/items/properties/pokemon_species/properties/name",
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "id": "/properties/pokemon_entries/items/properties/pokemon_species/properties/url",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "region": {
+                        "id": "/properties/region",
+                        "type": "null"
+                    },
+                    "version_groups": {
+                        "id": "/properties/version_groups",
+                        "items": {},
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+}

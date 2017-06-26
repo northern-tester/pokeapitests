@@ -21,7 +21,7 @@ describe("Retrieve National Pokedex Entries", function () {
     });
 
     //Assert against response code
-    it("National Pokedex Returns 200 Response Code", function(){
+    it("should return 200 response code", function(){
         return expect(pokedexData).to.have.status(200);
     });
 
@@ -32,125 +32,33 @@ describe("Retrieve National Pokedex Entries", function () {
 
     //Assert that the schema from the response matches the PokeAPI oracle
     it("should respond with data matching the Pokedex schema", function () {
-        var expectedSchema = {
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "definitions": {},
-                "id": "http://example.com/example.json",
-                "properties": {
-                    "descriptions": {
-                        "id": "/properties/descriptions",
-                        "items": {
-                            "id": "/properties/descriptions/items",
-                            "properties": {
-                                "description": {
-                                    "id": "/properties/descriptions/items/properties/description",
-                                    "type": "string"
-                                },
-                                "language": {
-                                    "id": "/properties/descriptions/items/properties/language",
-                                    "properties": {
-                                        "name": {
-                                            "id": "/properties/descriptions/items/properties/language/properties/name",
-                                            "type": "string"
-                                        },
-                                        "url": {
-                                            "id": "/properties/descriptions/items/properties/language/properties/url",
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        "type": "array"
-                    },
-                    "id": {
-                        "id": "/properties/id",
-                        "type": "integer"
-                    },
-                    "is_main_series": {
-                        "id": "/properties/is_main_series",
-                        "type": "boolean"
-                    },
-                    "name": {
-                        "id": "/properties/name",
-                        "type": "string"
-                    },
-                    "names": {
-                        "id": "/properties/names",
-                        "items": {
-                            "id": "/properties/names/items",
-                            "properties": {
-                                "language": {
-                                    "id": "/properties/names/items/properties/language",
-                                    "properties": {
-                                        "name": {
-                                            "id": "/properties/names/items/properties/language/properties/name",
-                                            "type": "string"
-                                        },
-                                        "url": {
-                                            "id": "/properties/names/items/properties/language/properties/url",
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                },
-                                "name": {
-                                    "id": "/properties/names/items/properties/name",
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        "type": "array"
-                    },
-                    "pokemon_entries": {
-                        "id": "/properties/pokemon_entries",
-                        "items": {
-                            "id": "/properties/pokemon_entries/items",
-                            "properties": {
-                                "entry_number": {
-                                    "id": "/properties/pokemon_entries/items/properties/entry_number",
-                                    "type": "integer"
-                                },
-                                "pokemon_species": {
-                                    "id": "/properties/pokemon_entries/items/properties/pokemon_species",
-                                    "properties": {
-                                        "name": {
-                                            "id": "/properties/pokemon_entries/items/properties/pokemon_species/properties/name",
-                                            "type": "string"
-                                        },
-                                        "url": {
-                                            "id": "/properties/pokemon_entries/items/properties/pokemon_species/properties/url",
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        "type": "array"
-                    },
-                    "region": {
-                        "id": "/properties/region",
-                        "type": "null"
-                    },
-                    "version_groups": {
-                        "id": "/properties/version_groups",
-                        "items": {},
-                        "type": "array"
-                    }
-                },
-                "type": "object"
-            };
+        var expectedSchema = require('./../schemas/nationalPokedex');
             return expect(pokedexData).to.have.schema(expectedSchema);
     });
 
-    it("Should return 721 pokemon entries for all Pokemon in all regions", function(){
+    it("should return 721 pokemon entries for all Pokemon in all regions", function(){
         return expect(pokedexData).to.have.json('pokemon_entries', function(pokemonArray){
             expect(pokemonArray).to.have.length(721);
+        });
+    });
+
+    it("should have only the GET on the National Pokedex endpoint", function() {
+        //var httpVerbs = ['OPTIONS','GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'TRACE', 'CONNECT'];
+            //Its a GET only endpoint but supports OPTIONS and others
+            this.timeout(4000);
+            expect(chakram.post(host+uri)).to.have.status(405);
+            expect(chakram.put(host+uri)).to.have.status(405);
+            expect(chakram.delete(host+uri)).to.have.status(405);
+            return chakram.wait();
+    });
+
+    it("should return list of supported methods from an OPTIONS call", function(){
+        chakram.options(host+uri)
+            .then(function(optionsResponse) {
+                expect(optionsResponse).to.have.header('allow', function(allowHeader) {
+                    expect(allowHeader).to.equal('GET, HEAD, OPTIONS');
+            })
+            return chakram.wait();
         });
     });
 });

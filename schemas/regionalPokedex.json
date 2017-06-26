@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {},
+    "id": "http://example.com/example.json",
+                "properties": {
+                    "count": {
+                        "id": "/properties/count",
+                        "type": "integer"
+                    },
+                    "next": {
+                        "id": "/properties/next",
+                        "type": "null"
+                    },
+                    "previous": {
+                        "id": "/properties/previous",
+                        "type": "null"
+                    },
+                    "results": {
+                        "id": "/properties/results",
+                        "items": {
+                            "id": "/properties/results/items",
+                            "properties": {
+                                "name": {
+                                    "id": "/properties/results/items/properties/name",
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "id": "/properties/results/items/properties/url",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+    "type": "object"
+    }
