@@ -1,0 +1,300 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {},
+    "id": "http://example.com/example.json",
+    "properties": {
+        "baby_trigger_item": {
+            "id": "/properties/baby_trigger_item",
+            "type": "null"
+        },
+        "chain": {
+            "id": "/properties/chain",
+            "properties": {
+                "evolution_details": {
+                    "id": "/properties/chain/properties/evolution_details",
+                    "items": {},
+                    "type": "array"
+                },
+                "evolves_to": {
+                    "id": "/properties/chain/properties/evolves_to",
+                    "items": {
+                        "id": "/properties/chain/properties/evolves_to/items",
+                        "properties": {
+                            "evolution_details": {
+                                "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details",
+                                "items": {
+                                    "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items",
+                                    "properties": {
+                                        "gender": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/gender",
+                                            "type": "null"
+                                        },
+                                        "held_item": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/held_item",
+                                            "type": "null"
+                                        },
+                                        "item": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/item",
+                                            "type": "null"
+                                        },
+                                        "known_move": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/known_move",
+                                            "type": "null"
+                                        },
+                                        "known_move_type": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/known_move_type",
+                                            "type": "null"
+                                        },
+                                        "location": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/location",
+                                            "type": "null"
+                                        },
+                                        "min_affection": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/min_affection",
+                                            "type": "null"
+                                        },
+                                        "min_beauty": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/min_beauty",
+                                            "type": "null"
+                                        },
+                                        "min_happiness": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/min_happiness",
+                                            "type": "integer"
+                                        },
+                                        "min_level": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/min_level",
+                                            "type": "null"
+                                        },
+                                        "needs_overworld_rain": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/needs_overworld_rain",
+                                            "type": "boolean"
+                                        },
+                                        "party_species": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/party_species",
+                                            "type": "null"
+                                        },
+                                        "party_type": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/party_type",
+                                            "type": "null"
+                                        },
+                                        "relative_physical_stats": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/relative_physical_stats",
+                                            "type": "null"
+                                        },
+                                        "time_of_day": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/time_of_day",
+                                            "type": "string"
+                                        },
+                                        "trade_species": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/trade_species",
+                                            "type": "null"
+                                        },
+                                        "trigger": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/trigger",
+                                            "properties": {
+                                                "name": {
+                                                    "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/trigger/properties/name",
+                                                    "type": "string"
+                                                },
+                                                "url": {
+                                                    "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/trigger/properties/url",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "turn_upside_down": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolution_details/items/properties/turn_upside_down",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "evolves_to": {
+                                "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to",
+                                "items": {
+                                    "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items",
+                                    "properties": {
+                                        "evolution_details": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details",
+                                            "items": {
+                                                "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items",
+                                                "properties": {
+                                                    "gender": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/gender",
+                                                        "type": "null"
+                                                    },
+                                                    "held_item": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/held_item",
+                                                        "type": "null"
+                                                    },
+                                                    "item": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/item",
+                                                        "properties": {
+                                                            "name": {
+                                                                "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/item/properties/name",
+                                                                "type": "string"
+                                                            },
+                                                            "url": {
+                                                                "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/item/properties/url",
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "known_move": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/known_move",
+                                                        "type": "null"
+                                                    },
+                                                    "known_move_type": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/known_move_type",
+                                                        "type": "null"
+                                                    },
+                                                    "location": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/location",
+                                                        "type": "null"
+                                                    },
+                                                    "min_affection": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/min_affection",
+                                                        "type": "null"
+                                                    },
+                                                    "min_beauty": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/min_beauty",
+                                                        "type": "null"
+                                                    },
+                                                    "min_happiness": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/min_happiness",
+                                                        "type": "null"
+                                                    },
+                                                    "min_level": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/min_level",
+                                                        "type": "null"
+                                                    },
+                                                    "needs_overworld_rain": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/needs_overworld_rain",
+                                                        "type": "boolean"
+                                                    },
+                                                    "party_species": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/party_species",
+                                                        "type": "null"
+                                                    },
+                                                    "party_type": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/party_type",
+                                                        "type": "null"
+                                                    },
+                                                    "relative_physical_stats": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/relative_physical_stats",
+                                                        "type": "null"
+                                                    },
+                                                    "time_of_day": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/time_of_day",
+                                                        "type": "string"
+                                                    },
+                                                    "trade_species": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/trade_species",
+                                                        "type": "null"
+                                                    },
+                                                    "trigger": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/trigger",
+                                                        "properties": {
+                                                            "name": {
+                                                                "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/trigger/properties/name",
+                                                                "type": "string"
+                                                            },
+                                                            "url": {
+                                                                "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/trigger/properties/url",
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "turn_upside_down": {
+                                                        "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolution_details/items/properties/turn_upside_down",
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "evolves_to": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/evolves_to",
+                                            "items": {},
+                                            "type": "array"
+                                        },
+                                        "is_baby": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/is_baby",
+                                            "type": "boolean"
+                                        },
+                                        "species": {
+                                            "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/species",
+                                            "properties": {
+                                                "name": {
+                                                    "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/species/properties/name",
+                                                    "type": "string"
+                                                },
+                                                "url": {
+                                                    "id": "/properties/chain/properties/evolves_to/items/properties/evolves_to/items/properties/species/properties/url",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "is_baby": {
+                                "id": "/properties/chain/properties/evolves_to/items/properties/is_baby",
+                                "type": "boolean"
+                            },
+                            "species": {
+                                "id": "/properties/chain/properties/evolves_to/items/properties/species",
+                                "properties": {
+                                    "name": {
+                                        "id": "/properties/chain/properties/evolves_to/items/properties/species/properties/name",
+                                        "type": "string"
+                                    },
+                                    "url": {
+                                        "id": "/properties/chain/properties/evolves_to/items/properties/species/properties/url",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "is_baby": {
+                    "id": "/properties/chain/properties/is_baby",
+                    "type": "boolean"
+                },
+                "species": {
+                    "id": "/properties/chain/properties/species",
+                    "properties": {
+                        "name": {
+                            "id": "/properties/chain/properties/species/properties/name",
+                            "type": "string"
+                        },
+                        "url": {
+                            "id": "/properties/chain/properties/species/properties/url",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "id": {
+            "id": "/properties/id",
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}
