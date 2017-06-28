@@ -4,8 +4,13 @@
         "uri":  {
                     "nationalPokedex":"pokedex/1/",
                     "regionalPokedex":"pokedex/",
-                    "invalidPokedex":"pokedex/10/"
-               }
+                    "invalidPokedex":"pokedex/10/",
+                    "evolutionsChain":"evolution-chain/",
+                    "evolutionsTrigger":"evolution-trigger/"
+        },
+        "dataItems": {
+                    "cleffaEvolutionChainId":"14/"
+        }
     }
    
 }
