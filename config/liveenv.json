@@ -9,7 +9,8 @@
                     "evolutionsTrigger":"evolution-trigger/"
         },
         "dataItems": {
-                    "cleffaEvolutionChainId":"14/"
+                    "cleffaEvolutionChainId":"14",
+                    "unavailableEvolutionChainId":"1000"
         }
     }
    

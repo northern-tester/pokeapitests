@@ -44,7 +44,6 @@ describe("Retrieve National Pokedex Entries", function () {
 
     it("should have only the GET on the National Pokedex endpoint", function() {
         //var httpVerbs = ['OPTIONS','GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'TRACE', 'CONNECT'];
-            //Its a GET only endpoint but supports OPTIONS and others
             this.timeout(4000);
             expect(chakram.post(host+uri)).to.have.status(405);
             expect(chakram.put(host+uri)).to.have.status(405);

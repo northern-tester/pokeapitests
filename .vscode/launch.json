@@ -17,7 +17,7 @@
             "--colors",
             "--config",
             "${workspaceRoot}/config/liveenv.json",
-            "${workspaceRoot}/test/regionalPokedexes"
+            "${workspaceRoot}/test"
         ],
         "internalConsoleOptions": "openOnSessionStart"
     },
