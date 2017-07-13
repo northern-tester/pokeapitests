@@ -11,11 +11,11 @@
         "dataItems": {
                     "evolutionId":"14",
                     "unavailableEvolutionId":"1000",
-                    "multipleEvolutionId":"",
-                    "oneEvolutionsNoBaby":"",
+                    "oneEvolutionNoBaby":"7",
                     "twoEvolutionsNoBaby":"1",
-                    "oneEvolutionsBaby":"",
-                    "twoEvolutionsBaby":""
+                    "oneEvolutionBaby":"100",
+                    "twoEvolutionsBaby":"14",
+                    "treeEvolution":"26"
         }
     }
    

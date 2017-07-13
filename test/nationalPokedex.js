@@ -11,53 +11,59 @@ var urlConfig = config.get("url")
 var host = urlConfig.host;
 var uri = urlConfig.uri.nationalPokedex;
 
-describe("Retrieve National Pokedex Entries", function () {
+describe("Retrieve national pokedex entries", function () {
 
     var pokedexData;
 
-    before("Initialise your environment and endpoint before getting data", function(){
-        //Get Pokedex Data
+    before("Retrieve the national pokedex", function(){
         pokedexData = chakram.get(host+uri);
     });
 
-    //Assert against response code
-    it("should return 200 response code", function(){
-        return expect(pokedexData).to.have.status(200);
-    });
-
-    //Assert that the content-type header is set to application/json
-    it("should return header indicating content type of json", function() {
-        return expect(pokedexData).to.have.header("content-type", "application/json");
-    });
-
-    //Assert that the schema from the response matches the PokeAPI oracle
-    it("should respond with data matching the Pokedex schema", function () {
-        var expectedSchema = require('./../schemas/nationalPokedex');
-            return expect(pokedexData).to.have.schema(expectedSchema);
-    });
-
-    it("should return 721 pokemon entries for all Pokemon in all regions", function(){
-        return expect(pokedexData).to.have.json('pokemon_entries', function(pokemonArray){
-            expect(pokemonArray).to.have.length(721);
+        it("National pokedex list returns 200 Response Code", function(){
+            return expect(pokedexData).to.have.status(200);
         });
-    });
 
-    it("should have only the GET on the National Pokedex endpoint", function() {
-        //var httpVerbs = ['OPTIONS','GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'TRACE', 'CONNECT'];
+        it("National pokedex endpoint returns header indicating content type of json", function() {
+            expect(pokedexData).to.be.encoded.with.gzip;
+            expect(pokedexData).to.have.header("content-type", "application/json");
+            expect(pokedexData).to.have.json('name', 'national');
+            return chakram.wait();
+        });
+
+        it("National pokedex conforms to schema", function () {
+            var expectedSchema = require('./../schemas/nationalPokedex');
+                return expect(pokedexData).to.have.schema(expectedSchema);
+        });
+
+        it("National pokedex endpoint should return 405 for POST, PUT or DELETE", function() {
             this.timeout(4000);
             expect(chakram.post(host+uri)).to.have.status(405);
             expect(chakram.put(host+uri)).to.have.status(405);
             expect(chakram.delete(host+uri)).to.have.status(405);
             return chakram.wait();
+        });
+
+        it("should return list of supported methods from an OPTIONS call", function(){
+            chakram.options(host+uri)
+                .then(function(optionsResponse) {
+                    expect(optionsResponse).to.have.header('allow', function(allowHeader) {
+                        return expect(allowHeader).to.equal('GET, HEAD, OPTIONS');
+                });
+            });
+        });
+
+});
+
+describe("Specific tests for the national pokedex endpoint", function(){
+
+    before("Retrieve the national pokedex", function(){
+        pokedexData = chakram.get(host+uri);
     });
 
-    it("should return list of supported methods from an OPTIONS call", function(){
-        chakram.options(host+uri)
-            .then(function(optionsResponse) {
-                expect(optionsResponse).to.have.header('allow', function(allowHeader) {
-                    expect(allowHeader).to.equal('GET, HEAD, OPTIONS');
-            })
-            return chakram.wait();
+        it("National pokedex has 721 pokemon entries for all Pokemon in all regions", function(){
+            return expect(pokedexData).to.have.json('pokemon_entries', function(pokemonArray){
+                expect(pokemonArray).to.have.length(721);
+            });
         });
-    });
+        
 });
